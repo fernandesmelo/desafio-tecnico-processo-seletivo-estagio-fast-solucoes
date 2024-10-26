@@ -1,7 +1,7 @@
-package com.fastsolucoes.workshop.service;
+package com.laercio.desafio_fast.workshop.service;
 
-import com.fastsolucoes.workshop.model.Workshop;
-import com.fastsolucoes.workshop.repository.WorkshopRepository;
+import com.laercio.desafio_fast.workshop.model.Workshop;
+import com.laercio.desafio_fast.workshop.repository.WorkshopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

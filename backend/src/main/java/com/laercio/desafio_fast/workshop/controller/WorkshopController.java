@@ -1,7 +1,7 @@
-package com.fastsolucoes.workshop.controller;
+package com.laercio.desafio_fast.workshop.controller;
 
-import com.fastsolucoes.workshop.model.Workshop;
-import com.fastsolucoes.workshop.service.WorkshopService;
+import com.laercio.desafio_fast.workshop.model.Workshop;
+import com.laercio.desafio_fast.workshop.service.WorkshopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

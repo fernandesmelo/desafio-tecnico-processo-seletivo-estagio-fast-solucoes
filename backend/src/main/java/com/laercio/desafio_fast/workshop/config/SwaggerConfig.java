@@ -1,4 +1,4 @@
-package com.fastsolucoes.workshop;
+package com.laercio.desafio_fast.workshop.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

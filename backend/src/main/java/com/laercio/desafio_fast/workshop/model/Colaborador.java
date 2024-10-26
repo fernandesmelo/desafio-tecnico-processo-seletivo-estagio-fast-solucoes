@@ -1,4 +1,4 @@
-package com.fastsolucoes.workshop.model;
+package com.laercio.desafio_fast.workshop.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
