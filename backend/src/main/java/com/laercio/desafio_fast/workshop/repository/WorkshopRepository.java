@@ -1,5 +1,7 @@
-package com.laercio.desafio_fast.workshop.repository;
+package com.fastsolucoes.workshop.repository;
 
-public class WorkshopRepository {
-    
+import com.fastsolucoes.workshop.model.Workshop;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface WorkshopRepository extends JpaRepository<Workshop, Integer> {
 }
