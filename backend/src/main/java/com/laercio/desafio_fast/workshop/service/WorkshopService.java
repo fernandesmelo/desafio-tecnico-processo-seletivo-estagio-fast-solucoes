@@ -21,12 +21,12 @@ public class WorkshopService {
         return workshopRepository.save(workshop);
     }
 
-    public Workshop atualizarWorkshop(int id, Workshop workshop) {
-        workshop.setId(id);
+    public Workshop atualizarWorkshop(int idWorkshops, Workshop workshop) {
+        workshop.setIdWorkshops(idWorkshops);
         return workshopRepository.save(workshop);
     }
 
-    public void deletarWorkshop(int id) {
-        workshopRepository.deleteById(id);
+    public void deletarWorkshop(int idWorkshops) {
+        workshopRepository.deleteById(idWorkshops);
     }
 }

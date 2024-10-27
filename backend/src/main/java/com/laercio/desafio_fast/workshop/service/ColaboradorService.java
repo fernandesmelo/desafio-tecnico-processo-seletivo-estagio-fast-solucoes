@@ -21,12 +21,12 @@ public class ColaboradorService {
         return colaboradorRepository.save(colaborador);
     }
 
-    public Colaborador atualizarColaborador(int id, Colaborador colaborador) {
-        colaborador.setId(id);
+    public Colaborador atualizarColaborador(int idColaboradores, Colaborador colaborador) {
+        colaborador.setIdColaboradores(idColaboradores);
         return colaboradorRepository.save(colaborador);
     }
 
-    public void deletarColaborador(int id) {
-        colaboradorRepository.deleteById(id);
+    public void deletarColaborador(int idColaboradores) {
+        colaboradorRepository.deleteById(idColaboradores);
     }
 }
