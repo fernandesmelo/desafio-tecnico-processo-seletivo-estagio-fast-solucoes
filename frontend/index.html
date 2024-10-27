@@ -34,7 +34,7 @@
             <button class="btn btn-secondary mt-3" onclick="fecharDetalhes()">Fechar</button>
         </div>
         <div class="mt-5">
-            <h2>Adicionar ou Editar Colaborador</h2>
+            <h2>Adicionar Colaborador</h2>
             <form id="form-colaborador">
                 <input type="hidden" id="colaborador-id">
                 <div class="form-group">
@@ -48,33 +48,31 @@
                 <div class="form-group">
                     <input type="text" id="colaborador-cargo" class="form-control" placeholder="Cargo" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Salvar Colaborador</button>
+                <button type="submit" class="btn btn-primary" id="button">Salvar Colaborador</button>
             </form>
-                <h2>Adicionar ou Editar Workshop</h2>
-                <form id="form-workshop">
-                    <input type="hidden" id="workshop-id">
-                    <div class="form-group">
-                        <input type="text" id="workshop-nome" class="form-control" placeholder="Nome do Workshop"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <input type="date" id="workshop-data" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="workshop-descricao" class="form-control" placeholder="Descrição"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="workshop-local" class="form-control" placeholder="Local" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="time" id="workshop-horario-inicio" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="time" id="workshop-horario-fim" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Salvar Workshop</button>
-                </form>
+            <h2>Adicionar Workshop</h2>
+            <form id="form-workshop">
+                <input type="hidden" id="workshop-id">
+                <div class="form-group">
+                    <input type="text" id="workshop-nome" class="form-control" placeholder="Nome do Workshop" required>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="workshop-data" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="workshop-descricao" class="form-control" placeholder="Descrição" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="workshop-local" class="form-control" placeholder="Local" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="workshop-horario-inicio" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="time" id="workshop-horario-fim" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button">Salvar Workshop</button>
+            </form>
         </div>
     </div>
     <script src="./javascript/index.js"></script>

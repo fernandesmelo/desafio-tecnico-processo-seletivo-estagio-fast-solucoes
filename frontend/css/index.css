@@ -1,14 +1,15 @@
 body {
-    background-color: #f8f9fa;
+    background-color: #001426;
     font-family: Arial, sans-serif;
   }
   
   .container {
     margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   h1, h2 {
-    color: #343a40;
+    color: #FFFFFF;
   }
   
   .list-group-item {
@@ -29,5 +30,15 @@ body {
   
   #workshop-info {
     color: #495057;
+  }
+
+  #button {
+    background-color: #00D3FD;
+    border-color: #00D3FD;
+    color: #001426;
+  }
+
+  form {
+    margin-bottom: 20px;
   }
   
