@@ -1,7 +1,19 @@
 let colaboradores = [
-    { id: 1, nome: 'Alice Silva' },
-    { id: 2, nome: 'Bruno Santos' },
-    { id: 3, nome: 'Carlos Almeida' },
+    { id: 1, 
+      nome: 'Laércio Fernandes', 
+      departamento: 'Desenvolvimento de Software FlowUp',
+      cargo: 'Estágio Pessoa desenvolvedora Fullstack',
+    },
+    { id: 2, 
+      nome: 'Ana Clara Silva',
+      departamento: 'Marketing',
+      cargo: 'Assistente de Marketing',
+    },
+    { id: 3, 
+      nome: 'Pedro Almeida',
+      departamento: 'Recursos Humanosp',
+      cargo: 'Analista de RH',
+    },
   ];
   
   let workshops = [
@@ -29,7 +41,7 @@ let colaboradores = [
       .forEach(colaborador => {
         const item = document.createElement('li');
         item.classList.add('list-group-item');
-        item.textContent = `${colaborador.nome} (ID: ${colaborador.id})`;
+        item.textContent = `${colaborador.nome} - ${colaborador.departamento} | ${colaborador.cargo}`;
         lista.appendChild(item);
       });
   }
@@ -81,13 +93,15 @@ let colaboradores = [
     e.preventDefault();
     const id = parseInt(document.getElementById('colaborador-id').value);
     const nome = document.getElementById('colaborador-nome').value;
+    const departamento = document.getElementById('colaborador-departamento').value;
+    const cargo = document.getElementById('colaborador-cargo').value;
     
     if (id) {
       const colaborador = colaboradores.find(c => c.id === id);
       if (colaborador) colaborador.nome = nome;
     } else {
       const novoId = colaboradores.length ? Math.max(...colaboradores.map(c => c.id)) + 1 : 1;
-      colaboradores.push({ id: novoId, nome });
+      colaboradores.push({ id: novoId, nome, departamento, cargo });
     }
   
     document.getElementById('form-colaborador').reset();
