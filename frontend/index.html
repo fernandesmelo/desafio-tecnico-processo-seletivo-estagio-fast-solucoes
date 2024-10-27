@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAST Soluções - Workshops</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5">Workshops e Colaboradores</h1>
+
+    <!-- Filtros de busca -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" id="filtro-colaboradores" class="form-control" placeholder="Buscar colaboradores">
+      </div>
+      <div class="col-md-6">
+        <input type="text" id="filtro-workshops" class="form-control" placeholder="Buscar workshops">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Lista de Colaboradores</h2>
+        <ul id="colaboradores-lista" class="list-group"></ul>
+      </div>
+      <div class="col-md-6">
+        <h2>Lista de Workshops</h2>
+        <ul id="workshops-lista" class="list-group"></ul>
+      </div>
+    </div>
+
+    <!-- Detalhes do workshop -->
+    <div id="workshop-detalhes" class="mt-5">
+      <h2>Detalhes do Workshop</h2>
+      <p id="workshop-info"></p>
+      <button class="btn btn-secondary mt-3" onclick="fecharDetalhes()">Fechar</button>
+    </div>
+    
+    <!-- Formulários para adicionar e editar -->
+    <div class="mt-5">
+      <h2>Adicionar ou Editar Colaborador</h2>
+      <form id="form-colaborador">
+        <input type="hidden" id="colaborador-id">
+        <div class="form-group">
+          <input type="text" id="colaborador-nome" class="form-control" placeholder="Nome do Colaborador" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Colaborador</button>
+      </form>
+
+      <h2 class="mt-5">Adicionar ou Editar Workshop</h2>
+      <form id="form-workshop">
+        <input type="hidden" id="workshop-id">
+        <div class="form-group">
+          <input type="text" id="workshop-nome" class="form-control" placeholder="Nome do Workshop" required>
+        </div>
+        <div class="form-group">
+          <input type="date" id="workshop-data" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <textarea id="workshop-descricao" class="form-control" placeholder="Descrição do Workshop"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Workshop</button>
+      </form>
+    </div>
+  </div>
+  <script src="./javascript/index.js"></script>
+  <script src="./javascript/mockData.js"></script>
+</body>
+</html>
+
