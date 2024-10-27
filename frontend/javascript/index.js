@@ -1,4 +1,3 @@
-// Dados simulados
 let colaboradores = [
     { id: 1, nome: 'Alice Silva' },
     { id: 2, nome: 'Bruno Santos' },
@@ -22,7 +21,6 @@ let colaboradores = [
     },
   ];
   
-  // Funções para manipulação de dados
   function carregarColaboradores(filtro = '') {
     const lista = document.getElementById('colaboradores-lista');
     lista.innerHTML = '';
@@ -71,7 +69,6 @@ let colaboradores = [
     document.getElementById('workshop-detalhes').style.display = 'none';
   }
   
-  // Função para filtrar colaboradores e workshops
   document.getElementById('filtro-colaboradores').addEventListener('input', (e) => {
     carregarColaboradores(e.target.value);
   });
@@ -80,18 +77,15 @@ let colaboradores = [
     carregarWorkshops(e.target.value);
   });
   
-  // Função para salvar colaboradores
   document.getElementById('form-colaborador').addEventListener('submit', (e) => {
     e.preventDefault();
     const id = parseInt(document.getElementById('colaborador-id').value);
     const nome = document.getElementById('colaborador-nome').value;
     
     if (id) {
-      // Editar colaborador existente
       const colaborador = colaboradores.find(c => c.id === id);
       if (colaborador) colaborador.nome = nome;
     } else {
-      // Adicionar novo colaborador
       const novoId = colaboradores.length ? Math.max(...colaboradores.map(c => c.id)) + 1 : 1;
       colaboradores.push({ id: novoId, nome });
     }
@@ -100,7 +94,6 @@ let colaboradores = [
     carregarColaboradores();
   });
   
-  // Função para salvar workshops
   document.getElementById('form-workshop').addEventListener('submit', (e) => {
     e.preventDefault();
     const id = parseInt(document.getElementById('workshop-id').value);
@@ -109,7 +102,6 @@ let colaboradores = [
     const descricao = document.getElementById('workshop-descricao').value;
     
     if (id) {
-      // Editar workshop existente
       const workshop = workshops.find(w => w.id === id);
       if (workshop) {
         workshop.nome = nome;
@@ -117,7 +109,6 @@ let colaboradores = [
         workshop.descricao = descricao;
       }
     } else {
-      // Adicionar novo workshop
       const novoId = workshops.length ? Math.max(...workshops.map(w => w.id)) + 1 : 1;
       workshops.push({
         id: novoId,
@@ -132,7 +123,6 @@ let colaboradores = [
     carregarWorkshops();
   });
   
-  // Inicialização
   carregarColaboradores();
   carregarWorkshops();
   
