@@ -11,6 +11,10 @@ body {
   h1, h2 {
     color: #FFFFFF;
   }
+
+  #titulo-detalhes-workshop {
+    color: #495057;
+  }
   
   .list-group-item {
     cursor: pointer;
