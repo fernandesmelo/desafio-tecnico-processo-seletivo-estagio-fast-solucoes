@@ -1,48 +1,60 @@
 body {
-    background-color: #001426;
+    background-color: #000C22;
     font-family: Arial, sans-serif;
-  }
-  
-  .container {
+}
+
+.container {
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-  
-  h1, h2 {
-    color: #FFFFFF;
-  }
+}
 
-  #titulo-detalhes-workshop {
+h1,
+h3 {
+    color: #FFFFFF;
+}
+
+#titulo-detalhes-workshop {
     color: #495057;
-  }
-  
-  .list-group-item {
+}
+
+.list-group-item {
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .list-group-item:hover {
+}
+
+.list-group-item:hover {
     background-color: #e9ecef;
-  }
-  
-  #workshop-detalhes {
+}
+
+#workshop-detalhes {
     display: none;
     border: 1px solid #ced4da;
     padding: 20px;
     background-color: #fff;
-  }
-  
-  #workshop-info {
-    color: #495057;
-  }
+}
 
-  #button {
+#workshop-info {
+    color: #495057;
+}
+
+#button {
     background-color: #00D3FD;
     border-color: #00D3FD;
-    color: #001426;
-  }
+    color: #000C22;
+}
 
-  form {
+form {
     margin-bottom: 20px;
-  }
-  
+}
+
+.imagem-centralizada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-centralizada img {
+    margin-left: 100px;
+    max-width: 100%;
+    height: auto;
+}

@@ -20,59 +20,63 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h2>Lista de Colaboradores</h2>
+                <h3>Lista de Colaboradores</h3>
                 <ul id="colaboradores-lista" class="list-group"></ul>
             </div>
             <div class="col-md-6">
-                <h2>Lista de Workshops</h2>
+                <h3>Lista de Workshops</h3>
                 <ul id="workshops-lista" class="list-group"></ul>
             </div>
         </div>
         <div id="workshop-detalhes" class="mt-5">
-            <h2 id="titulo-detalhes-workshop">Detalhes do Workshop</h2>
+            <h3 id="titulo-detalhes-workshop">Detalhes do Workshop</h3>
             <p id="workshop-info"></p>
             <button class="btn btn-secondary mt-3" id="button" onclick="fecharDetalhes()">Fechar</button>
         </div>
-        <div class="mt-5">
-            <h2>Adicionar Colaborador</h2>
-            <form id="form-colaborador">
-                <input type="hidden" id="colaborador-id">
-                <div class="form-group">
-                    <input type="text" id="colaborador-nome" class="form-control" placeholder="Nome do Colaborador"
-                        required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="colaborador-departamento" class="form-control" placeholder="Departamento"
-                        required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="colaborador-cargo" class="form-control" placeholder="Cargo" required>
-                </div>
-                <button type="submit" class="btn btn-primary" id="button">Salvar Colaborador</button>
-            </form>
-            <h2>Adicionar Workshop</h2>
-            <form id="form-workshop">
-                <input type="hidden" id="workshop-id">
-                <div class="form-group">
-                    <input type="text" id="workshop-nome" class="form-control" placeholder="Nome do Workshop" required>
-                </div>
-                <div class="form-group">
-                    <input type="date" id="workshop-data" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="workshop-descricao" class="form-control" placeholder="Descrição" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="workshop-local" class="form-control" placeholder="Local" required>
-                </div>
-                <div class="form-group">
-                    <input type="time" id="workshop-horario-inicio" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <input type="time" id="workshop-horario-fim" class="form-control" required>
-                </div>
-                <button type="submit" class="btn btn-primary" id="button">Salvar Workshop</button>
-            </form>
+        
+        <div class="mt-5 d-flex align-items-center justify-content-between">
+            <div class="flex-grow-1">
+                <h3>Adicionar Colaborador</h3>
+                <form id="form-colaborador">
+                    <input type="hidden" id="colaborador-id">
+                    <div class="form-group">
+                        <input type="text" id="colaborador-nome" class="form-control" placeholder="Nome do Colaborador" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="colaborador-departamento" class="form-control" placeholder="Departamento" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="colaborador-cargo" class="form-control" placeholder="Cargo" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="button">Salvar Colaborador</button>
+                </form>
+                <h3>Adicionar Workshop</h3>
+                <form id="form-workshop">
+                    <input type="hidden" id="workshop-id">
+                    <div class="form-group">
+                        <input type="text" id="workshop-nome" class="form-control" placeholder="Nome do Workshop" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="workshop-data" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="workshop-descricao" class="form-control" placeholder="Descrição" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="workshop-local" class="form-control" placeholder="Local" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="time" id="workshop-horario-inicio" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="time" id="workshop-horario-fim" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="button">Salvar Workshop</button>
+                </form>
+            </div>
+            <div class="imagem-centralizada">
+                <img src="./assets/images/fastsolucoes_logo.jpg" alt="Descrição da imagem" class="img-fluid">
+            </div>
         </div>
     </div>
     <script src="./javascript/index.js"></script>
