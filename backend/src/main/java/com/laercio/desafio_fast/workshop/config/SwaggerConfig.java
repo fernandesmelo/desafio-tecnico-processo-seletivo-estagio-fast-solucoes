@@ -15,7 +15,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.fastsolucoes.workshop.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.laercio.desafio_fast.workshop.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
