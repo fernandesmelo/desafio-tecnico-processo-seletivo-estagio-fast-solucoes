@@ -1,5 +1,5 @@
 INSERT INTO `desafio_fast`.`colaboradores` (`nome`, `departamento`, `cargo`) VALUES 
-('Laércio Fernandes', 'Desenvolvimento de Software FlowUp', 'Estágio Pessoa desenvolvedora Fullstack'),
+('Laércio Fernandes', 'Desenvolvimento FlowUp', 'Estagiário Fullstack'),
 ('Ana Clara Silva', 'Marketing', 'Assistente de Marketing'),
 ('Pedro Almeida', 'Recursos Humanos', 'Analista de RH'),
 ('Mariana Costa', 'Desenvolvimento de Software FlowUp', 'Desenvolvedora Frontend'),

@@ -14,7 +14,7 @@ let colaboradores = [
   {
     id: 3,
     nome: "Pedro Almeida",
-    departamento: "Recursos Humanosp",
+    departamento: "Recursos Humanos",
     cargo: "Analista de RH",
   },
 ];
@@ -34,7 +34,8 @@ let workshops = [
     id: 2,
     nome: "Workshop de Desenvolvimento Web",
     dataRealizacao: "11/04/2024",
-    descricao: "Técnicas e práticas para desenvolvimento de aplicações web modernas.",
+    descricao:
+      "Técnicas e práticas para desenvolvimento de aplicações web modernas.",
     local: "Laboratório 1",
     horarioInicio: "16:00:00",
     horarioFim: "17:00:00",
@@ -78,11 +79,23 @@ function carregarWorkshops(filtro = "") {
       const item = document.createElement("li");
       item.classList.add("list-group-item");
       item.textContent = `${workshop.nome} - ${workshop.dataRealizacao}`;
-      item.addEventListener("click", () =>
-        mostrarDetalhesWorkshop(workshop.id)
-      );
+      item.addEventListener("click", () => {
+        mostrarDetalhesWorkshop(workshop.id);
+        carregarOpcoesColaboradores(); // Para garantir que o <select> esteja atualizado
+      });
       lista.appendChild(item);
     });
+}
+
+function carregarOpcoesColaboradores() {
+  const select = document.getElementById("workshop-colaboradores");
+  select.innerHTML = "";
+  colaboradores.forEach((colaborador) => {
+    const option = document.createElement("option");
+    option.value = colaborador.id;
+    option.textContent = colaborador.nome;
+    select.appendChild(option);
+  });
 }
 
 function mostrarDetalhesWorkshop(workshopId) {
@@ -153,6 +166,9 @@ document.getElementById("form-workshop").addEventListener("submit", (e) => {
   const local = document.getElementById("workshop-local").value;
   const horarioInicio = document.getElementById("workshop-horario-inicio").value;
   const horarioFim = document.getElementById("workshop-horario-fim").value;
+  const colaboradoresSelecionados = Array.from(
+    document.getElementById("workshop-colaboradores").selectedOptions
+  ).map((option) => parseInt(option.value));
 
   if (id) {
     const workshop = workshops.find((w) => w.id === id);
@@ -163,6 +179,7 @@ document.getElementById("form-workshop").addEventListener("submit", (e) => {
       workshop.local = local;
       workshop.horarioInicio = horarioInicio;
       workshop.horarioFim = horarioFim;
+      workshop.colaboradoresPresentes = colaboradoresSelecionados;
     }
   } else {
     const novoId = workshops.length
@@ -176,7 +193,7 @@ document.getElementById("form-workshop").addEventListener("submit", (e) => {
       local,
       horarioInicio,
       horarioFim,
-      colaboradoresPresentes: [],
+      colaboradoresPresentes: colaboradoresSelecionados,
     });
   }
 
@@ -186,3 +203,4 @@ document.getElementById("form-workshop").addEventListener("submit", (e) => {
 
 carregarColaboradores();
 carregarWorkshops();
+carregarOpcoesColaboradores();

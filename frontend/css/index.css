@@ -58,3 +58,7 @@ form {
     max-width: 100%;
     height: auto;
 }
+
+label {
+    color: #FFFFFF;
+}
