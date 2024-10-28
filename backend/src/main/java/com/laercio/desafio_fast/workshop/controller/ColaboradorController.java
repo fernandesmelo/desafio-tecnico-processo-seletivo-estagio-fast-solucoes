@@ -1,40 +1,72 @@
 package com.laercio.desafio_fast.workshop.controller;
 
 import com.laercio.desafio_fast.workshop.model.Colaborador;
-import com.laercio.desafio_fast.workshop.service.ColaboradorService;
+import com.laercio.desafio_fast.workshop.model.DadosCadastroColaborador;
+import com.laercio.desafio_fast.workshop.repository.ColaboradorRepository;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("/api/colaboradores")
+@Controller
+@RequestMapping("/api")
 public class ColaboradorController {
 
+    // private List<Produto> produtos = new ArrayList<>();
     @Autowired
-    private ColaboradorService colaboradorService;
+    private ColaboradorRepository repository;
 
     @GetMapping
-    public List<Colaborador> listarColaboradores() {
-        return colaboradorService.listarColaboradores();
+    public String abreFormProd(Model model) {
+        model.addAttribute("colaborador", new Colaborador());
+        return "index/";
     }
 
     @PostMapping
-    public Colaborador criarColaborador(@RequestBody Colaborador colaborador) {
-        return colaboradorService.salvarColaborador(colaborador);
+    @Transactional
+    public String cadastraProd(DadosCadastroColaborador dados) {
+        Colaborador colaborador;
+
+        if (dados.id() != null) { // Verifica se é uma atualização
+            colaborador = repository.findById(dados.id())
+                    .orElseThrow(() -> new IllegalArgumentException("Funcionário inválido: " + dados.id()));
+            colaborador.atualizaDados(dados); // Atualiza os dados do funcionário existente
+        } else { // Se não houver ID, é uma nova inserção
+            colaborador = new Colaborador(dados);
+        }
+
+        repository.save(colaborador);
+        return "redirect:/index";
     }
 
-    @PutMapping("/{id}")
-    public Colaborador atualizarColaborador(@PathVariable int id, @RequestBody Colaborador colaborador) {
-        return colaboradorService.atualizarColaborador(id, colaborador);
+    // Método para carregar o formulário de edição
+    @GetMapping("/index")
+    public String carregaFormularioEdicao(@RequestParam Long id, Model model) {
+        Colaborador colaborador = repository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("colaborador inválido: " + id));
+        model.addAttribute("colaborador", colaborador);
+        return "/index";
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletarColaborador(@PathVariable int id) {
-        colaboradorService.deletarColaborador(id);
-        return ResponseEntity.noContent().build();
+    @GetMapping("/listagem")
+    public String carregaLista(Model model) {
+        model.addAttribute("lista", repository.findAll());
+        return "/index";
+    }
+
+    @GetMapping("/")
+    public String principal() {
+        return "index.html";
+    }
+
+    @DeleteMapping
+    @Transactional
+    public String removeProd(Long id) {
+        repository.deleteById(id);
+        System.out.println("Excluido");
+        return "redirect:/produto/listagem";
     }
 }
- 
-
