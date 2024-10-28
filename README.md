@@ -34,18 +34,24 @@ Próximos passos...
 
 ## 🔨 Tomada de Decisões
 
-* **HTML**: usado para estruturar a página da web.
+* **MySQL**: 
 
-* **CSS**: Usado para estilizá-la.
+* **HTML**: 
 
-* **JavaScript**: Usado para adicionar interatividade.
+* **CSS**: 
+
+* **JavaScript**: 
   
-* **Biblioteca Font Awesome**: Usado para fornecer ícones estilizados.
+* **Biblioteca Font Awesome**: 
 
 ## 👨🏽‍💻 Versão das Tecnologias
 
+* MySQL Workbench 0.8
+* Java 23.0.1
+* Spring 3.3.5
 * HTML5
 * CSS3
+* Bootstrap 4.5.2
 * JavaScript ECMAScript 6 (ES6)
 
 ## ✒️ Autor
