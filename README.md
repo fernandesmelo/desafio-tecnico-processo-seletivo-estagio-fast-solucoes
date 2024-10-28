@@ -137,5 +137,5 @@ Este guia fornece instruções passo a passo para baixar, instalar e configurar 
    - Abra o arquivo HTML principal no navegador Google Chrome.
    - Verifique se o layout e os scripts estão funcionando corretamente.
 
-Agora você está pronto para começar o desenvolvimento!
+Agora você está pronto para começar!
 
