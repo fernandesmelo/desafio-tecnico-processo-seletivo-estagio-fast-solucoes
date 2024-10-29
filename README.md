@@ -34,15 +34,25 @@ Próximos passos...
 
 ## 🔨 Tomada de Decisões
 
-* **MySQL**: 
-
-* **HTML**: 
-
-* **CSS**: 
-
-* **JavaScript**: 
-  
-* **Biblioteca Font Awesome**: 
+### Banco de Dados
+* **Ferramentas Utilizadas:** Para modelagem, utilizei o brModelo para definir o modelo entidade-relacionamento (MER), enquanto o MySQL Workbench foi usado para gerar o modelo relacional (MR), gerar e visualizar o banco de dados.
+* **Decisão:** Escolhi o MySQL como sistema de gerenciamento de banco de dados por sua facilidade de integração com o Spring Boot e sua ampla documentação.
+### Backend
+* **Linguagem e Framework:** Implementado em Java com o Spring Boot seguindo o padrão arquitetural MVC (Model-View-Controller), o que permite a separação de responsabilidades e facilita a manutenção e escalabilidade do código.
+* **Dependências:**
+  * Utilizei várias bibliotecas do Spring Boot para um desenvolvimento robusto e seguro, como:
+    * **Spring Data JPA:** para operações simplificadas com o banco de dados.
+    * **Spring Security:** para implementação de segurança.
+    * **Springfox:** para documentação automática da API com Swagger.
+  * **Lombok:** para reduzir a verbosidade do código com geração automática de getters, setters, e outros métodos utilitários.
+  * **MySQL Connector:** para integração do projeto com o banco de dados MySQL.
+  * **DevTools:** para agilizar o desenvolvimento com auto-reload.
+### Frontend
+* **Tecnologias Utilizadas:** Construí a interface utilizando HTML, CSS com Bootstrap para estilos responsivos, e JavaScript para adicionar funcionalidades interativas.
+**Decisão:** O Bootstrap foi escolhido para acelerar o desenvolvimento do front-end com estilos pré-definidos e para garantir uma interface responsiva sem a necessidade de desenvolver uma estrutura de CSS personalizada do zero.
+### Ferramentas e Estrutura do Projeto
+* **Gerenciamento de Dependências:** Utilizamos o Maven para facilitar a configuração e gerenciamento de dependências do projeto Java.
+* **Estrutura do Código:** O projeto segue o padrão de diretórios do Spring Boot no backend e a organização de pacotes foi estruturada de forma modular em controle, serviços e repositórios para garantir um fluxo claro e desacoplado dos componentes.
 
 ## 👨🏽‍💻 Versão das Tecnologias
 
