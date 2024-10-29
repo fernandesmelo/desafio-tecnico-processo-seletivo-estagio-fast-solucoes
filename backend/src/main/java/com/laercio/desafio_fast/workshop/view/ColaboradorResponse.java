@@ -4,7 +4,6 @@ public class ColaboradorResponse {
     private int id;
     private String nome;
 
-    // Construtor, Getters e Setters
     public ColaboradorResponse(int id, String nome) {
         this.id = id;
         this.nome = nome;

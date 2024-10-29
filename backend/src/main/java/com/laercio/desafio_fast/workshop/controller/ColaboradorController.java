@@ -3,9 +3,7 @@ package com.laercio.desafio_fast.workshop.controller;
 import com.laercio.desafio_fast.workshop.model.Colaborador;
 import com.laercio.desafio_fast.workshop.model.DadosCadastroColaborador;
 import com.laercio.desafio_fast.workshop.repository.ColaboradorRepository;
-
 import jakarta.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class ColaboradorController {
 
-    // private List<Produto> produtos = new ArrayList<>();
     @Autowired
     private ColaboradorRepository repository;
 
@@ -30,11 +27,11 @@ public class ColaboradorController {
     public String cadastraProd(DadosCadastroColaborador dados) {
         Colaborador colaborador;
 
-        if (dados.id() != null) { // Verifica se é uma atualização
+        if (dados.id() != null) { 
             colaborador = repository.findById(dados.id())
                     .orElseThrow(() -> new IllegalArgumentException("Funcionário inválido: " + dados.id()));
-            colaborador.atualizaDados(dados); // Atualiza os dados do funcionário existente
-        } else { // Se não houver ID, é uma nova inserção
+            colaborador.atualizaDados(dados); 
+        } else { 
             colaborador = new Colaborador(dados);
         }
 
@@ -42,7 +39,6 @@ public class ColaboradorController {
         return "redirect:/index";
     }
 
-    // Método para carregar o formulário de edição
     @GetMapping("/index")
     public String carregaFormularioEdicao(@RequestParam Long id, Model model) {
         Colaborador colaborador = repository.findById(id)

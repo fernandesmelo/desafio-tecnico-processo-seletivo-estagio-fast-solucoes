@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class WorkshopController {
 
-    // private List<Produto> produtos = new ArrayList<>();
     @Autowired
     private WorkshopRepository repository;
 
@@ -27,11 +26,11 @@ public class WorkshopController {
     public String cadastraProd(DadosCadastroWorkshop dados) {
         Workshop workshop;
 
-        if (dados.id() != null) { // Verifica se é uma atualização
+        if (dados.id() != null) { 
             workshop = repository.findById(dados.id())
                     .orElseThrow(() -> new IllegalArgumentException("Funcionário inválido: " + dados.id()));
-            workshop.atualizaDados(dados); // Atualiza os dados do funcionário existente
-        } else { // Se não houver ID, é uma nova inserção
+            workshop.atualizaDados(dados); 
+        } else { 
             workshop = new Workshop(dados);
         }
 
@@ -39,7 +38,6 @@ public class WorkshopController {
         return "redirect:/index";
     }
 
-    // Método para carregar o formulário de edição
     @GetMapping("/index")
     public String carregaFormularioEdicao(@RequestParam Long id, Model model) {
         Workshop workshop = repository.findById(id)

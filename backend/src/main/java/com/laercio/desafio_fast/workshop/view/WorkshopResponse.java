@@ -6,7 +6,6 @@ public class WorkshopResponse {
     private String dataRealizacao;
     private String descricao;
 
-    // Construtor, Getters e Setters
     public WorkshopResponse(int id, String nome, String dataRealizacao, String descricao) {
         this.id = id;
         this.nome = nome;
